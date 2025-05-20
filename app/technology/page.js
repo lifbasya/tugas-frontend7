@@ -32,10 +32,10 @@ export default function Technology() {
         <span className="font-bold opacity-25 mr-2">03</span> SPACE LAUNCH 101
       </p>
 
-      <section className="flex flex-col justify-center items-center mt-32">
+      <section className="flex flex-col justify-center items-center mt-20">
         <div className="flex justify-center items-center gap-28">
           {/* Left Numbered Tabs */}
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-8">
             {technologyData.map((_, index) => (
               <button
                 key={index}
@@ -54,8 +54,8 @@ export default function Technology() {
 
           {/* Text Section */}
           <div className="flex flex-col items-start justify-center w-full max-w-[543px]">
-            <h2 className="text-white opacity-50 text-3xl">THE TERMINOLOGY…</h2>
-            <h1 className="text-white text-6xl mt-4">{technologyData[activeIndex].name}</h1>
+            <h2 className="text-white opacity-50 text-2xl">THE TERMINOLOGY…</h2>
+            <h1 className="text-white text-6xl mt-3">{technologyData[activeIndex].name}</h1>
             <p className="text-blue-200 text-[16px] mt-6">
               {technologyData[activeIndex].description}
             </p>
