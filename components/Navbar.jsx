@@ -50,7 +50,7 @@ export default function Navbar() {
 
         {/* Hamburger / Close Button (Mobile Only) */}
         <button
-          className="md:hidden fixed top-6 right-6 text-white z-[999] text-4xl"
+          className="md:hidden fixed top-3.5 right-6 text-white z-[999] text-4xl"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >

@@ -42,60 +42,62 @@ export default function Destination() {
   const currentPlanet = planetPlanet[activeIndex];
 
   return (
-    <main className="bg-[url('/bg-destination.jpg')] bg-cover h-screen grid place-items-center">
-      <p className="condensed text-2xl tracking-[4px] mb-2 fixed top-[8rem] left-[11rem]">
-        <span className="font-bold opacity-25 mr-2">01</span> PICK YOUR
-        DESTINATION
+    <main className="bg-[url('/bg-destination.jpg')] bg-cover min-h-screen flex flex-col items-center px-6 md:px-16 lg:px-52 pt-28 md:pt-36 xl:pt-28 pb-12">
+      {/* Top Title */}
+      <p className="condensed text-xl sm:text-2xl tracking-[4px] text-white mb-12 text-center md:text-left self-start">
+        <span className="font-bold opacity-25 mr-2">01</span> PICK YOUR DESTINATION
       </p>
-      <section className="flex flex-col justify-center items-start mt-32 scale-[0.9]">
-        <div className="flex gap-20">
-          <div>
-            <img
-              src={`/${currentPlanet.photoPlanet}`}
-              alt={currentPlanet.name}
-              className="w-[440px]"
-            />
-          </div>
 
-          <div className="flex flex-col items-start justify-center w-full max-w-[445px]">
-            <ul className="flex gap-10 mb-6">
-              {planetPlanet.map((planet, index) => (
-                <li
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                  className={`text-white condensed text-xl tracking-[2px] cursor-pointer hover:text-blue-200 ${
-                    activeIndex === index ? "border-b-2 pb-1" : ""
-                  }`}
-                >
-                  {planet.name}
-                </li>
-              ))}
-            </ul>
+      {/* Planet Section */}
+      <section className="flex flex-col xl:flex-row items-center justify-between gap-16 w-full max-w-5xl">
+        {/* Planet Image */}
+        <div className="flex justify-center">
+          <img
+            src={`/${currentPlanet.photoPlanet}`}
+            alt={currentPlanet.name}
+            className="w-[200px] sm:w-[300px] md:w-[350px] lg:w-[440px]"
+          />
+        </div>
 
-            <h1 className="text-white text-8xl mt-2">{currentPlanet.name}</h1>
-            <p className="text-blue-200 text-[18px] mt-6">
-              {currentPlanet.description}
-            </p>
+        {/* Planet Info */}
+        <div className="flex flex-col items-center xl:items-start max-w-[453px] text-center xl:text-left">
+          {/* Tabs */}
+          <ul className="flex gap-8 mb-6 text-white text-lg tracking-[2px] condensed">
+            {planetPlanet.map((planet, index) => (
+              <li
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`cursor-pointer hover:text-blue-200 ${
+                  activeIndex === index ? "border-b-2 pb-1" : ""
+                }`}
+              >
+                {planet.name}
+              </li>
+            ))}
+          </ul>
 
-            <hr className="bg-white w-full opacity-25 mt-6" />
+          {/* Planet Name */}
+          <h1 className="text-white text-6xl sm:text-7xl md:text-8xl mt-2">
+            {currentPlanet.name}
+          </h1>
 
-            <div className="flex justify-between items-start mt-6 w-full">
-              <div className="flex flex-col">
-                <p className="text-blue-200 text-lg condensed tracking-[2px]">
-                  AVG. DISTANCE
-                </p>
-                <h2 className="text-white text-3xl mt-3">
-                  {currentPlanet.distance} KM
-                </h2>
-              </div>
-              <div className="flex flex-col">
-                <p className="text-blue-200 text-lg condensed tracking-[2px]">
-                  EST. TRAVEL TIME
-                </p>
-                <h2 className="text-white text-3xl mt-3">
-                  {currentPlanet.travelDays}
-                </h2>
-              </div>
+          {/* Description */}
+          <p className="text-blue-200 text-sm sm:text-lg mt-6 leading-7 max-w-prose">
+            {currentPlanet.description}
+          </p>
+
+          {/* Divider */}
+          <hr className="bg-white w-full opacity-25 mt-6" />
+
+          {/* Distance & Travel Time */}
+          <div className="flex flex-wrap justify-center md:gap-32 xl:justify-start gap-14 lg:gap-24 mt-6 w-full text-white">
+            <div className="flex flex-col">
+              <p className="text-blue-200 text-sm condensed tracking-[2px]">AVG. DISTANCE</p>
+              <h2 className="text-2xl mt-2">{currentPlanet.distance} KM</h2>
+            </div>
+            <div className="flex flex-col">
+              <p className="text-blue-200 text-sm condensed tracking-[2px]">EST. TRAVEL TIME</p>
+              <h2 className="text-2xl mt-2">{currentPlanet.travelDays}</h2>
             </div>
           </div>
         </div>
