@@ -43,7 +43,7 @@ export default function Technology() {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-xl sm:text-2xl transition-all duration-300 ${
+                className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-xl sm:text-2xl transition-all duration-300 cursor-pointer ${
                   activeIndex === index
                     ? "bg-white text-black"
                     : "border border-white text-white opacity-30 hover:opacity-80"

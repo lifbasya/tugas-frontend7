@@ -66,7 +66,7 @@ export default function Crew() {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`w-3 h-3  rounded-full transition-opacity ${
+                className={`w-3 h-3  rounded-full transition-opacity cursor-pointer ${
                   index === activeIndex
                     ? "bg-white"
                     : "bg-white opacity-25 hover:opacity-60"
